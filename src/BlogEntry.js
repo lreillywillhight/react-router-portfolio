@@ -18,13 +18,13 @@ const BlogEntry = props => {
         setTopic(e.target.value)
     }
 
-    function handleSubmit(e) {
-        alert(`${subject}, ${body}, ${topic}`)
-        e.preventDefault()
-    }
+    // function handleSubmit(e) {
+    //     alert(`${subject}, ${body}, ${topic}`)
+    //     e.preventDefault()
+    // }
 
     return (
-        <form className="entryField" onSubmit={(e) => props.createPost({'subject': "poster"})}>
+        <form className="entryField" onSubmit={(e) => props.createPost({subject:`${subject}`,body:`${body}`})}>
             <h4>Post Time</h4>
             <div>
                 <label htmlFor="subject">Subject:</label>

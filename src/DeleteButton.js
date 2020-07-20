@@ -3,7 +3,7 @@ import React from 'react'
 const DeleteButton = props => {
     return (
         <div>
-            <input type="button" value={`delete post ${props.post.id}`} onClick={(e) => props.action(props.post)} />
+            <input type="button" value={`delete post`} onClick={(e) => props.action(props.post)} />
         </div>
     )
 }

@@ -8,7 +8,7 @@ const Blog = props => {
         <div>
             <ul>
                 {props.posts.map((post, index) => (
-                    <li id={index}>
+                    <li key={index} id={`post${index}`}>
                         <br/>
                         <h1>{post.title}</h1>
                         <p>{post.body}</p>

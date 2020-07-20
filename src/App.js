@@ -9,54 +9,59 @@ import Blog from './Blog'
 
 
 function App() {
-    const [posts,setPosts] = useState
-    ([
+
+    //this could be moved to ./Blog, I have not gotten around to it.
+    const testState = [
         {
-            id: 0,
+            idc:0,
             title: "test",
             body: "This is a test post."
         },
         {
-            id: 1,
+            idc:1,
             title: "another test post",
             body: "this is another test post"
         },
         {
-            id: 2,
-            title: "another test post",
-            body: "this is another test post"
+            idc:2,
+            title: "more posts",
+            body: "another truly awesome test post"
         },
-        {
-            id: 3,
-            title: "another test post",
-            body: "this is another test post"
+        {   
+            idc:3,
+            title: "wow more posts",
+            body: "wow this site is really cool"
         },
-    ])
+    ]
 
+    // posts is an array of objects idc,title,body
+    const [posts,setPosts] = useState(testState)
+
+    // to be used and incremented with each post created
+    const [idCounter,setIdCounter] = useState(testState.length) //'4'
+
+    //debugging function
     useEffect(() => {
-        console.log(posts)
+        console.log(posts[1])
+        console.log(idCounter)
     },
     [posts])
 
     function createPost(form) {
-        console.log(form.subject)
+        console.log(idCounter,form)
         // e.preventDefault()
     }
     
     function deletePost(e) {
-        let postId = e.id
-        let idMismatch = function(i) {
-            return (i.id !== postId)
-        }
-        let newPosts = posts.filter(idMismatch)
-        setPosts(newPosts)
-        // console.log(e.id)
+        console.log(document.getElementById())
+        // let postId = e.id
+        // let idMismatch = function(i) {
+        //     return (i.id !== postId)
+        // }
+        // let newPosts = posts.filter(idMismatch)
+        // setPosts(newPosts)
     }
 
-    // let posts = [
-    //     "this is a post",
-    //     "this is another post"
-    // ]
 
   return (
 
