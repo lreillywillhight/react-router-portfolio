@@ -24,7 +24,7 @@ const BlogEntry = props => {
     }
 
     return (
-        <form class="entryField" onSubmit={handleSubmit}>
+        <form className="entryField" onSubmit={(e) => props.createPost({'subject': "poster"})}>
             <h4>Post Time</h4>
             <div>
                 <label htmlFor="subject">Subject:</label>

@@ -20,7 +20,7 @@ const Blog = props => {
             <br/>
             <br/>
             <br/>
-            <BlogEntry />
+            <BlogEntry createPost={props.createPost}/>
         </div>
         // <div>
         //     <h1>What the heck</h1>

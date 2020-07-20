@@ -33,14 +33,14 @@ function App() {
         },
     ])
 
-    // useEffect(() => {
-    //     console.log(posts)
-    // },
-    // [posts])
+    useEffect(() => {
+        console.log(posts)
+    },
+    [posts])
 
-    function createPost(e) {
-        console.log('bazinga')
-        e.preventDefault()
+    function createPost(form) {
+        console.log(form.subject)
+        // e.preventDefault()
     }
     
     function deletePost(e) {
@@ -74,7 +74,7 @@ function App() {
             <Route exact path='/' component={Home} />
             <Route path='/about' component={About} />
             <Route path='/projects' component={Projects} />
-            <Route path='/blog' render={() => <Blog posts={posts} action={deletePost} daction={createPost}/>} />
+            <Route path='/blog' render={() => <Blog posts={posts} action={deletePost} createPost={createPost} />} />
         </div>
         
     </Router>
